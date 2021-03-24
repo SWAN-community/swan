@@ -1,4 +1,4 @@
-# ![](https://raw.githubusercontent.com/51Degrees/swan/main/images/swan.128.pxls.100.dpi.png)
+# ![](https://raw.githubusercontent.com/SWAN-community/swan/main/images/swan.128.pxls.100.dpi.png)
 
 # Secured Web Addressability Network (SWAN) – Data Flows
 

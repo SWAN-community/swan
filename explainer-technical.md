@@ -1,4 +1,4 @@
-# ![](https://raw.githubusercontent.com/51Degrees/swan/main/images/swan.128.pxls.100.dpi.png)
+# ![](https://raw.githubusercontent.com/SWAN-community/swan/main/images/swan.128.pxls.100.dpi.png)
 
 # Secured Web Addressability Network (SWAN) - Technical
 
@@ -13,7 +13,7 @@ Identifiers are shared across multiple domains within the web browsers. The
 initial implementation of SWAN uses cookies (first party) written and read via
 the primary navigation of the web browser. This feature is implemented in the
 open-source project [Shared Web InFormaTion
-(SWIFT)](https://github.com/51degrees/swift). It is expected other data sharing
+(SWIFT)](https://github.com/SWAN-community/swift). It is expected other data sharing
 mechanisms will be supported in time including, cross domain cookies (third
 party), pop-up windows that obtain the information and return control to the
 caller, browser extensions or browser features that enable cross domain data
@@ -28,7 +28,7 @@ processor that does not sign, or tamper with the transaction is immediately
 identifiable to the rest of the supply chain. People can easily verify who had
 access to their pseudonymous identifiers, preferences and other data enabling
 them to exercise their rights under laws such as GDPR. This feature of SWAN is
-supported via [Open Web ID (OWID)](https://github.com/51degrees/owid), a
+supported via [Open Web ID (OWID)](https://github.com/SWAN-community/owid), a
 lightweight cryptographic processor identifier. The Internet Advertising Bureau
 Technology Lab (IAB TL) [Supply Chain
 object](https://github.com/InteractiveAdvertisingBureau/openrtb/blob/master/supplychainobject.md)
@@ -42,8 +42,8 @@ RTB](https://www.iab.com/guidelines/openrtb/) version 2.5 and above.
 ## Design
 
 SWAN has been built on the open-source projects [Shared Web InFormaTion
-(SWIFT)](https://github.com/51Degrees/swift) and [Open Web Id
-(OWID)](https://github.com/51Degrees/owid).
+(SWIFT)](https://github.com/SWAN-community/swift) and [Open Web Id
+(OWID)](https://github.com/SWAN-community/owid).
 
 SWIFT supports the sharing of data within the web browser across domains using
 first party cookies and redirects. SWAN could utilise additional cross domain
