@@ -77,4 +77,4 @@ Improves value of all engagement solutions.
 
 ## Explainers
 
-Find out about the [principles](explainer-principles.md) involved in SWAN, the requirments for a possible [legal entity](legal-entity-explainer.md) to govern SWAN, the [model contract](model-terms-explainer.md) between data processors, the [technical](explainer-technical.md), and the [data flows](data-flows.md) details.
+Find out about the [principles](explainer-principles.md) involved in SWAN, the requirments for a possible [legal entity](legal-entity-explainer.md) to govern SWAN, the [model terms](model-terms-explainer.md) between data processors, the [technical](explainer-technical.md), and the [data flows](data-flows.md) details.
