@@ -135,16 +135,18 @@ in practice.
 
 The SWAN data model will be defined by the SWAN Network. All SWAN Operators and
 users will conform to the same data model. At the time of writing the current
-fields are.
+fields are as follows with the SWID, Personalized Marketing and Email Address 
+always transmitted as a OWIDs to ensure they are auditable.
 
 | **Field**             | **Data Type**         | **Description**                                                      |
 |-----------------------|-----------------------|----------------------------------------------------------------------|
-| Common Browser ID     | Byte Array (16 bytes) | A random restable identifier for the web browser                     |
-| Personalize Marketing | Boolean               | A flag to indicate if personalized marketing is acceptable           |
+| SWID                  | Byte Array (16 bytes) | A random restable identifier for the web browser                     |
+| Personalize Marketing | String                | A yes/no flag to indicate if personalized marketing is acceptable    |
 | Email Address         | String                | An email address provided by the user                                |
 | Blocked Adverts       | String Array          | A list of advert IDs that should not be displayed on the web browser |
 
-The current data model is shown in [INSERT DOCUMENT REFERENCE].
+The current data model is covered in the (Model Terms)[model-terms-explainer.md] 
+and the (API)[apis.md].
 
 Changes to the data model will need to be agreed by the SWAN governance process.
 The data model is not expected to change frequently.
@@ -199,7 +201,8 @@ the transaction and passed back to the requestor then the party that sent the
 data must add an additional signature to indicate that they failed to get a
 response.
 
-Data audit is supported via a simple signing standard called Open Web ID (OWID).
+Data audit is supported via a simple signing standard called 
+(Open Web ID)[https://github.com/SWAN-community/owid] (OWID).
 
 ## Where does SWAN fit?
 
@@ -217,9 +220,10 @@ is accessible from different internet domains.
 
 ![](media/6ca4d1a3ce87b1daf1400aec9c31e02e.png)
 
-SWAN’s data sharing component, implemented initially using SWIFT, will replace
-third party cookie data storage and support identifiers and other common data
-that is part of the SWAN data model.
+SWAN’s data sharing component, implemented initially using 
+(SWIFT)[https://github.com/SWAN-community/swift], will replace third party cookie
+data storage and support identifiers and other common data that is part of the 
+SWAN data model.
 
 If users enable 3PC to continue to be used on their web browser then the SWAN
 solution will make use of them. When they are not available then SWIFT will be
@@ -280,10 +284,11 @@ Two types of access will be allowed to the SWAN Network via the SWAN Operator.
 >   the entirety of the session. They will not be allowed to persist the data
 >   beyond the session.
 
-It is expected that a publisher will have a contractual relationship with a CMP
-for the purposes of enabling users to administer their SWAN data from the
-publishers web site. The publisher will also have a contractual relationship
-with the SWAN Operator to read the information.
+It is expected that a publisher will have a contractual relationship with a 
+User Interface Provider (UIP) perhaps operated by a CMP for the purposes of
+enabling users to administer their SWAN data from the publishers web site. The 
+publisher will also have a contractual relationship with the SWAN Operator to 
+read the information.
 
 It is important to remember that the data returned from the SWAN to the
 publisher is most likely to have been already added by another CMP, and not the
