@@ -24,8 +24,8 @@ rules for the SWAN administration entity (hereafter “SWANCo”) in which SWAN
 Operators and established trade bodies will be members.
 
 This document should be read in conjunction with the privacy focused [Model
-Terms](https://github.com/swan-community/swan/model-terms.md) and their
-[explainer](https://github.com/swan-community/swan/model-terms-explainer.md)
+Terms](https://github.com/swan-community/swan/blob/main/model-terms.md) and their
+[explainer](https://github.com/swan-community/swan/blob/main/model-terms-explainer.md)
 which are intended to become assets of SWANCo.
 
 ### Company Purpose
