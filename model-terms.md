@@ -21,7 +21,7 @@ liability to any person using or relying on all or any part of these terms.*
 
 “**Binding Principles**” means the principles set out in clause 4.
 
-“**Breach Notification**” means a notice given in accordance with clause 8.2
+“**Breach Notification**” means a notice given in accordance with clause 8(2)
 that a Contracting Party has breached these Model Terms.
 
 “**Change in Law**” means any change to any Data Protection Laws or other
@@ -105,7 +105,7 @@ Contractual Clauses.
 “**Root Party**” means the Contracting Party initiating the originating
 Transaction in a particular chain of Transactions.
 
-“**Security Measures**” shall have the meaning given to it in clause 7.7.
+“**Security Measures**” shall have the meaning given to it in clause 7(7).
 
 “**Sender**” means the Contracting Party sending the SWAN Data to the Receiver.
 
@@ -231,7 +231,7 @@ Interface, such as a consent management platform.
 3.  On receipt of the SWAN Data, the Receiver shall Sign the Transaction to
     confirm receipt of the SWAN Data. The Receiver shall not use any SWAN Data
     where the data relating to a User’s Preference as required under clause
-    5.9.2 is missing from the SWAN Data or contains a null value.
+    5(9)(ii) is missing from the SWAN Data or contains a null value.
 
 4.  If the Receiver fails to Sign the Transaction but provides a response to
     that Transaction, then the Sender must Sign to confirm that it sent the
@@ -320,7 +320,7 @@ Interface, such as a consent management platform.
 
 10.   The User Interface Provider shall ensure that no Party, including the
     User Interface Provider itself, may alter, amend or delete any text or
-    functionality required under clause 5.9, except that the User Interface
+    functionality required under clause 5(9), except that the User Interface
     Provider shall be permitted to create accurate language translations of
     any such text where appropriate and to provide additional consent
     management and preference functionality in respect of activities not
@@ -354,17 +354,17 @@ Interface, such as a consent management platform.
 
 2.  <u>Reidentification</u>
 
-    1.  Subject to clause 6.2.2, neither Contracting Party shall identify the
+    1.  Subject to clause 6(2)(ii), neither Contracting Party shall identify the
         offline identity of a User from SWAN Data.
 
-    2.  The restriction in clause 6.2.1 shall not apply in respect of a User
+    2.  The restriction in clause 6(2)(i) shall not apply in respect of a User
         who has provided Personal Data from which they can be identified
         offline directly to a Receiver when engaging with that Receiver’s
         web property.
 
 **7.  DATA PROTECTION**
 
-1.  Subject to clause 7.2, the Contracting Parties acknowledge and agree
+1.  Subject to clause 7(2), the Contracting Parties acknowledge and agree
     that for the purposes of Data Protection Laws each is an independent and
     separate Controller of its processing of Personal Data in connection
     with these Model Terms. Each such Contracting Party warrants to the
@@ -407,7 +407,7 @@ Interface, such as a consent management platform.
     Data or Non-SWAN Data whether or not in writing and whether or not
     referencing any Data Protection Laws or identifying any specific Users
     (“**Data Production Request**”), it shall deal with the Data Production
-    Request in accordance with the following terms in this clause 7.6:
+    Request in accordance with the following terms in this clause 7(6):
 
     1.  The Receiver Parties shall not disclose any Personal Data to any
         person in response to a Data Production Request unless either they
@@ -417,7 +417,7 @@ Interface, such as a consent management platform.
         harm that merits disclosure in any event (for example, to protect
         individuals’ vital interests).
 
-    2.  Where, in accordance with this clause 7.6, disclosure of the
+    2.  Where, in accordance with this clause 7(6), disclosure of the
         Personal Data is required in response to a Data Production Request,
         the Receiver Parties shall notify the Sender in writing in advance
         (setting out all relevant details) and shall thereafter provide all
@@ -455,7 +455,7 @@ Interface, such as a consent management platform.
 
     1.  In the event a Contracting Party breaches these Model Terms the
         relevant Contracting Party shall make a Breach Notification in
-        accordance with clause 8.2.
+        accordance with clause 8(2)
 
 2.  <u>Breach Notification</u>
 
@@ -482,18 +482,18 @@ Interface, such as a consent management platform.
             relation to any defaulting Party:
 
             1.  to the extent known, notify that Party with the information
-                set out in clause 8.2.1.1; and
+                set out in clause 8(2)(i)(a); and
 
             2.  publish the Breach Notice on its website within 72 hours of
                 becoming aware that the defaulting Party has failed to
-                comply with clause 8.2.1.1.
+                comply with clause 8(2)(i)(a).
 
 3.  <u>Termination</u>
 
     1.  A Contracting Party may terminate the Main Agreement if the other
         Contracting Party:
 
-        1.  fails to comply with its obligations under clause 8.2 (Breach
+        1.  fails to comply with its obligations under clause 8(2) (Breach
             Notifications);
 
         2.  commits an incurable and material breach of these Model Terms in
@@ -532,7 +532,7 @@ Interface, such as a consent management platform.
     1.  If the Main Agreement between the Contracting Parties terminates or
         expires, the Contracting Parties shall immediately cease sending or
         receiving SWAN Data and using it for the purposes set out in clause
-        4.4 (but not clauses 4.4.5 or 4.4.5, which shall survive the
+        4(4) (but not clauses 4(4)(v) or 4(4)(v), which shall survive the
         termination or expiry of that Main Agreement).
 
 **9.  WARRANTY & LIABILITY**
@@ -551,7 +551,7 @@ Interface, such as a consent management platform.
 
 2.  Liability
 
-    1.  SUBJECT TO CLAUSE 9.2.2, NOTHING IN ANY MAIN AGREEMENT SHALL LIMIT
+    1.  SUBJECT TO CLAUSE 9(2)(ii), NOTHING IN ANY MAIN AGREEMENT SHALL LIMIT
         OR EXCLUDE THE LIABILITY OF A CONTRACTING PARTY TO ANY OTHER PARTY
         IN CONNECTION WITH THESE MODEL TERMS.
 
@@ -601,18 +601,18 @@ Interface, such as a consent management platform.
         Changes to these Model Terms shall be communicated to Parties by way
         of publication of the modified terms on the SWAN Website.
 
-    2.  Subject to clause 10.5.3, any changes to the Model Terms in the Main
+    2.  Subject to clause 10(5)(iii), any changes to the Model Terms in the Main
         Agreement between the Contracting Parties shall be effective 30 days
         after the date of publication except where stated to be effective
         sooner as a result of a Change in Law.
 
     3.  If any of the changes to the Model Terms published on the SWAN
         Website modify the definition of SWAN Data or Raw SWAN Data, the
-        purposes set out in clause 4.4 or any other fundamental aspect of
+        purposes set out in clause 4(4) or any other fundamental aspect of
         the model relating to the SWAN Ecosystem (as notified on the SWAN
         Website):
 
-        1.  clause 10.5.2 shall not apply; and
+        1.  clause 10(5)(ii) shall not apply; and
 
         2.  the Main Agreement between the Contracting Parties shall
             terminate if the Contracting Parties do not enter into a Main
@@ -620,7 +620,7 @@ Interface, such as a consent management platform.
             of publication.
 
     4.  Any changes made to the Model Terms in accordance with this clause
-        10.5 shall only apply to SWAN Data sent or received after the
+        10(5) shall only apply to SWAN Data sent or received after the
         modified Model Terms come into force.
 
 **11.  GOVERNING LAW & JURISDICTION**
@@ -639,7 +639,7 @@ Interface, such as a consent management platform.
 
 2.  If any provision(s) of these Model Terms cannot be given legal effect
     under the governing law applicable to the Model Terms in accordance with
-    clause 11.1 then the presiding arbitrator shall apply the local law that
+    clause 11(1) then the presiding arbitrator shall apply the local law that
     most closely approximates that particular provision(s).
 
 3.  In the event of any dispute arising out of or in connection with these
