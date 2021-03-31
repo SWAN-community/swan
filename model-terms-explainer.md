@@ -157,7 +157,7 @@ current device, as well as to optionally apply across other devices when
 authenticating with the SWAN Network. User Interface Providers are also bound by
 the SWAN Model Terms.
 
-User Interface Providers are the only parties who can see raw (non-encrypted)
+User Interface Providers are the only parties who can see raw (non-hashed)
 personal data, as they act as the conduit between the user and the SWAN Network
 for the purpose of updating and maintaining a user’s pseudonymous identifiers
 and preferences.
