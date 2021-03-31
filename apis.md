@@ -49,8 +49,8 @@ Six fields form the SWAN data model.
 
 All end points are prefixed with the `/swan/api/v1/` path prefix. The path
 segment that follows describes the action that the end point will perform. For
-example; to fetch SWAN data from an encrypted string the “`fetch”` action is
-used resulting in the path “/swan/api/v1/fetch”.
+example; to fetch SWAN data from an encrypted string the `fetch` action is
+used resulting in the path `/swan/api/v1/fetch`.
 
 Unless specified otherwise all end points support both HTTP GET and POST
 methods.
@@ -83,7 +83,7 @@ before the browser returns to the caller.
 | Stop                  | Optional       | The current stopped advert identifiers being used by the caller. Used if the data has been removed from the SWAN network, perhaps by tracking prevention techniques.                                                                                                                                                                                           | `cool-bikes.uk`                                   |
 | swid                  | Optional       | The current SWID OWID known to the caller. Used if the data has been removed from the SWAN network, perhaps by tracking prevention techniques.                                                                                                                                                                                                                 | `Nx09ZGRCrt8kByjl_HKA`                            |
 | title                 | Optional       | The title to display in the browser window during the operation.                                                                                                                                                                                                                                                                                               | Getting your preferences                          |
-| X-FORWARDED-FOR       | Optional       | The HTTP header value for X-FORWARDED-FOR as provided to the requesting web server. Used to calculate the home node and reduce the number of redirects.                                                                                                                                                                                                        | 23.245.23.65                                      |
+| X-FORWARDED-FOR       | Optional       | The HTTP header value for X-FORWARDED-FOR as provided to the requesting web server. Used to calculate the home node and reduce the number of redirects.                                                                                                                                                                                                        | `23.245.23.65`                                    |
 
 #### Validation
 
@@ -270,13 +270,13 @@ extracting the input data.
 
 ### Decrypt Raw
 
-The “decrypt-raw” action takes the same parameters as the decrypt operation.
+The `decrypt-raw` action takes the same parameters as the decrypt operation.
 However, it returns the information that a User Interface Provider needs to
 display the user interface along with the data needed to use when using the
 “update” action to update the SWAN network and return the web browser to the
 caller.
 
-**The data returned from “decrypt-raw” can never be used for any purpose other
+**The data returned from `decrypt-raw` can never be used for any purpose other
 than to provision a user interface. This is a strict requirement of the Model
 Terms.**
 
