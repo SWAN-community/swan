@@ -90,7 +90,7 @@ unnecessarily burdensome.
 
 Parties may only make use of SWAN Data (or data linked to it) for purposes
 specified in the Binding Principles. These focus on simple, intelligible use
-cases universal to the advertising ecosystem. SWAN builds
+cases universal to the advertising ecosystem.
 
 Each party in these networks is responsible for whistleblowing if it becomes
 aware of any bad behaviour in those networks. Breaching parties must publish
