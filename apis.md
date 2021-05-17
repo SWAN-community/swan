@@ -29,13 +29,20 @@ the SWAN Network.
 
 The following actions are described in this document.
 
-* [Fetch](#fetch) - retrieving data from SWAN
-* [Update](#update) - updating SWAN data
-* [Decrypt](#decrypt) - transforming encrypted data for use in advertising
-* [Decrypt-Raw](#decrypt-raw) - transforming encrypted data use in user interfaces
-* [Home-Node](#home-node) - the home node for the web browser
-* [Stop](#stop) - stopping adverts based on domain name
-* [CreateSWID](#createswid) - generating new SWIDs
+-   [Fetch](#fetch) - retrieving data from SWAN
+
+-   [Update](#update) - updating SWAN data
+
+-   [Decrypt](#decrypt) - transforming encrypted data for use in advertising
+
+-   [Decrypt-Raw](#decrypt-raw) - transforming encrypted data use in user
+    interfaces
+
+-   [Home-Node](#home-node) - the home node for the web browser
+
+-   [Stop](#stop) - stopping adverts based on domain name
+
+-   [CreateSWID](#createswid) - generating new SWIDs
 
 ## Server Side
 
@@ -101,7 +108,7 @@ segment that follows describes the action that the end point will perform. For
 example; to create a URL that will direct the web browser to fetch SWAN data the
 [fetch](#fetch) action is used resulting in the path `/swan/api/v1/fetch`.
 
-All end points support both HTTPS GET and POST methods for the provision of 
+All end points support both HTTPS GET and POST methods for the provision of
 parameters. Example URLs in this document are shown with the GET method.
 
 ### Defaults
@@ -116,7 +123,7 @@ Some operations result in data that must be used with in a limited period of
 time. An action like fetch or update that result in a URL require the browser to
 be navigated to that URL within a few seconds of it being returned.
 
-Actions that take encrypted data like [decrypt](#decrypt) or 
+Actions that take encrypted data like [decrypt](#decrypt) or
 [decrypt-raw](#decrypt-raw) will require the encrypted data to have been
 generated just before the request is performed.
 
@@ -142,7 +149,7 @@ environment.
 
 ## Actions
 
-The following actions are available with SWAN Operators and the access nodes 
+The following actions are available with SWAN Operators and the access nodes
 they provide.
 
 ### Fetch
@@ -156,28 +163,28 @@ caller.
 
 #### Input
 
-| **Parameter**         | **Validation** | **Description**                                                                                                                                                                                                                                                                                                                                                    | **Example**                                       |
-|-----------------------|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
-| accessKey             | Mandatory      | The secret access key known only to the caller and the SWAN Operator.                                                                                                                                                                                                                                                                                              | `123`                                             |
-| accessNode            | Optional       | The access node of the SWAN Operator that will be used to perform the decrypt action when control returns to the caller. If this is not provided, then the same SWAN Operator access node as the one being called will be used. This parameter is provided so that UIPs can pass an encrypted response to a publisher where they use different SWAN Operators.     | ap2.swan-operator.com                             |
-| backgroundColor       | Optional       | The HTML color for the background of the progress page.                                                                                                                                                                                                                                                                                                            | \#111111                                          |
-| displayUserInterface  | Optional       | Boolean indicator for the display of the progress user interface. Defaults to true.                                                                                                                                                                                                                                                                                | true                                              |
-| javascript            | Optional       | If set to true then the response to the URL will be JavaScript code that will in turn add more JavaScript code to the page until all the SWAN nodes have been visited and the SWAN data is available for decryption. Used when third party cookies are available.  Defaults to false.                                                                              | false                                             |
-| message               | Optional       | The message to display above the progress indicator if enabled during the operation. Along with the title this attribute enables callers to communicate with the user and set expectations.                                                                                                                                                                        | Hang tight. We’re just fetching your preferences. |
-| messageColor          | Optional       | The HTML color to use for the message text.                                                                                                                                                                                                                                                                                                                        | Blue                                              |
-| nodeCount             | Optional       | An integer number greater than 1 to indicate the number of nodes that should be used for the operation.                                                                                                                                                                                                                                                            | 15                                                |
-| postMessageOnComplete | Optional       | Boolean indicator to determine if a window.postMessages should be used to return the encrypted response from the storage operation. If set to false then the web browsers navigation returns to the URL. Defaults to false.                                                                                                                                        | false                                             |
-| pref                  | Optional       | The current preferences OWID being used by the caller. Used if the data has been removed from the SWAN network, perhaps by tracking prevention techniques.                                                                                                                                                                                                         | `Nx09ZGRCrt8kByjl_HKA`                            |
-| progressColor         | Optional       | The HTML color for the progress indicator.                                                                                                                                                                                                                                                                                                                         | Red                                               |
-| remoteAddr            | Optional       | The IP address of the web browser as observed by the requesting server. Used to calculate the home node and reduce the number of redirects.                                                                                                                                                                                                                        | 23.245.23.65                                      |
-| returnUrl             | Mandatory      | The complete URL that the web browser should return to when the operation completes. The encrypted data will be appended to this URL. If the postMessageOnComplete parameter is true then the value will be used to post the message to the correct window.                                                                                                        | `https://publisher.com/article`                   |
-| state                 | Optional       | Optional array of values expressed via duplicate keys to pass information between the caller and the return url.                                                                                                                                                                                                                                                   | “Custom messages”                                 |
-| stop                  | Optional       | The current stopped advert identifiers being used by the caller. Used if the data has been removed from the SWAN network, perhaps by tracking prevention techniques.                                                                                                                                                                                               | `cool-bikes.uk` `cool-cars.uk`                    |
-| swid                  | Optional       | The current SWID OWID known to the caller. Used if the data has been removed from the SWAN network, perhaps by tracking prevention techniques.                                                                                                                                                                                                                     | `Nx09ZGRCrt8kByjl_HKA`                            |
-| tcString              | Optional       | The TCF string encoded in an OWID if provided by the publisher. Used if the data has been removed from the SWAN network, perhaps by tracking prevention techniques.                                                                                                                                                                                                | `Nx09ZGRCrt8kByjl_HKA`                            |
-| title                 | Optional       | The title to display in the browser window during the operation.                                                                                                                                                                                                                                                                                                   | Getting your preferences                          |
-| useHomeNode           | Optional       | Used to prevent the SWAN operator from using the home node even if it contains a current copy of the data. True to use the home node, false to ignore home nodes.  Should be set to false when the caller does not want to rely on the data held in the home node alone and wants to force more nodes to be consulted before returning the data. Defaults to true. | true                                              |
-| X-Forwarded-For       | Optional       | The HTTP header value for X-Forwarded-For as provided to the requesting web server. Used to calculate the home node and reduce the number of redirects.                                                                                                                                                                                                            | `23.245.23.65`                                    |
+| **Parameter**         | **Validation** | **Description**                                                                                                                                                                                                                                                                                                                                                   | **Example**                                       |
+|-----------------------|----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
+| accessKey             | Mandatory      | The secret access key known only to the caller and the SWAN Operator.                                                                                                                                                                                                                                                                                             | `123`                                             |
+| accessNode            | Optional       | The access node of the SWAN Operator that will be used to perform the decrypt action when control returns to the caller. If this is not provided, then the same SWAN Operator access node as the one being called will be used. This parameter is provided so that UIPs can pass an encrypted response to a publisher where they use different SWAN Operators.    | ap2.swan-operator.com                             |
+| backgroundColor       | Optional       | The HTML color for the background of the progress page.                                                                                                                                                                                                                                                                                                           | \#111111                                          |
+| displayUserInterface  | Optional       | Boolean indicator for the display of the progress user interface. Defaults to true.                                                                                                                                                                                                                                                                               | true                                              |
+| javascript            | Optional       | If set to true then the response to the URL will be JavaScript code that will in turn add more JavaScript code to the page until all the SWAN nodes have been visited and the SWAN data is available for decryption. Used when third party cookies are available. Defaults to false.                                                                              | false                                             |
+| message               | Optional       | The message to display above the progress indicator if enabled during the operation. Along with the title this attribute enables callers to communicate with the user and set expectations.                                                                                                                                                                       | Hang tight. We’re just fetching your preferences. |
+| messageColor          | Optional       | The HTML color to use for the message text.                                                                                                                                                                                                                                                                                                                       | Blue                                              |
+| nodeCount             | Optional       | An integer number greater than 1 to indicate the number of nodes that should be used for the operation.                                                                                                                                                                                                                                                           | 15                                                |
+| postMessageOnComplete | Optional       | Boolean indicator to determine if a window.postMessages should be used to return the encrypted response from the storage operation. If set to false then the web browsers navigation returns to the URL. Defaults to false.                                                                                                                                       | false                                             |
+| pref                  | Optional       | The current preferences OWID being used by the caller. Used if the data has been removed from the SWAN network, perhaps by tracking prevention techniques.                                                                                                                                                                                                        | `Nx09ZGRCrt8kByjl_HKA`                            |
+| progressColor         | Optional       | The HTML color for the progress indicator.                                                                                                                                                                                                                                                                                                                        | Red                                               |
+| remoteAddr            | Optional       | The IP address of the web browser as observed by the requesting server. Used to calculate the home node and reduce the number of redirects.                                                                                                                                                                                                                       | 23.245.23.65                                      |
+| returnUrl             | Mandatory      | The complete URL that the web browser should return to when the operation completes. The encrypted data will be appended to this URL. If the postMessageOnComplete parameter is true then the value will be used to post the message to the correct window.                                                                                                       | `https://publisher.com/article`                   |
+| state                 | Optional       | Optional array of values expressed via duplicate keys to pass information between the caller and the return url.                                                                                                                                                                                                                                                  | “Custom messages”                                 |
+| stop                  | Optional       | The current stopped advert identifiers being used by the caller. Used if the data has been removed from the SWAN network, perhaps by tracking prevention techniques.                                                                                                                                                                                              | `cool-bikes.uk` `cool-cars.uk`                    |
+| swid                  | Optional       | The current SWID OWID known to the caller. Used if the data has been removed from the SWAN network, perhaps by tracking prevention techniques.                                                                                                                                                                                                                    | `Nx09ZGRCrt8kByjl_HKA`                            |
+| tcString              | Optional       | The TCF string encoded in an OWID if provided by the publisher. Used if the data has been removed from the SWAN network, perhaps by tracking prevention techniques.                                                                                                                                                                                               | `Nx09ZGRCrt8kByjl_HKA`                            |
+| title                 | Optional       | The title to display in the browser window during the operation.                                                                                                                                                                                                                                                                                                  | Getting your preferences                          |
+| useHomeNode           | Optional       | Used to prevent the SWAN operator from using the home node even if it contains a current copy of the data. True to use the home node, false to ignore home nodes. Should be set to false when the caller does not want to rely on the data held in the home node alone and wants to force more nodes to be consulted before returning the data. Defaults to true. | true                                              |
+| X-Forwarded-For       | Optional       | The HTTP header value for X-Forwarded-For as provided to the requesting web server. Used to calculate the home node and reduce the number of redirects.                                                                                                                                                                                                           | `23.245.23.65`                                    |
 
 #### Validation
 
@@ -253,7 +260,7 @@ complete with a post message to the opening window. Rather than navigating the
 web browser to the return URL the caller should open a new window to perform the
 SWAN operation. The following code provides an example.
 
-```javascript
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var w = 500;
 var h = 625;
 var x = screen.width/2 - w/2;
@@ -264,15 +271,15 @@ swanWindow = window.open(
     "width=" + w + ",height=" + h + ",left=" + x + ",top=" + y +
     ",directories=0,titlebar=0,toolbar=0,location=0,status=0," +
     "menubar=0,scrollbars=no,resizable=no");
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When the SWAN operation completes in that window the following JavaScript will
 be used to communicate to the caller the encrypted SWAN data as a base 64
 string.
 
-```javascript
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 window.opener.postMessage("[Encrypted SWAN string]","[ReturnURL]");
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If is the responsibility of the caller to open the window and handle closing the
 window when this post message is received. The returnUrl provided should match
@@ -284,38 +291,38 @@ If the `javascript` parameter is set to true then the URL will return JavaScript
 code which will run immediately. This can be included on the page server side as
 an HTML script element such as the following.
 
-```html
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 <script src="[URL returned from fetch]" type="text/javascript"></script>
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Alternatively other JavaScript code could be used to insert the element after
 the page has rendered. The following example shows how this could be achieved.
 
-```javascript
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var s = document.createElement("script");
 s.src ="[URL returned from fetch]";
 document.currentScript.parentNode.appendChild(s);
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The caller must ensure there is a global function titled swanComplete to the
 encrypted SWAN data. This function will be responsible for decrypting the SWAN
 data, possibly by making a call to a custom server-side endpoint.
 
-```javascript
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function swanComplete(encrypted) {
     // Decrypt the encrypted data.
 }
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The encrypted data must be decrypted using the [decrypt](#decrypt) or
 [decrypt-raw](#decrypt-raw) actions.
 
 ### Decrypt
 
-The data takes an encrypted base 64 string, returned to the caller via another 
-method such as in a URL path segment, in the content of a client side 
-postMessage or via a JavaScript call to the global method swanComplete. The 
-[fetch](#fetch) action described previously is usually called prior to the 
+The data takes an encrypted base 64 string, returned to the caller via another
+method such as in a URL path segment, in the content of a client side
+postMessage or via a JavaScript call to the global method swanComplete. The
+[fetch](#fetch) action described previously is usually called prior to the
 decrypt action.
 
 A decrypted version of the input for use by the caller under the terms of the
@@ -334,10 +341,10 @@ otherwise.
 | accessKey     | Mandatory      | `123`                                                  |
 | encrypted     | Mandatory      | `5dq6LhxaSBF…Nx09ZGRCrt8kByjl_HKA_1DscE7d4xLXVbz0_l1c` |
 
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 <https://swan-operator.com/swan/api/v1/decrypt?accessKey=123&encrypted=5dq6LhxaSBF…Nx09ZGRCrt8kByjl_HKA_1DscE7d4xLXVbz0_l1c>
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #### Validation
 
@@ -373,7 +380,7 @@ them that are described in the following table.
 The SWAN data items available for readonly operation and distribution
 exclusively to SWAN participants bound by the model terms are returned.
 
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 [
 
@@ -438,7 +445,7 @@ exclusively to SWAN participants bound by the model terms are returned.
 }
 
 ] 
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #### Examples
 
@@ -516,7 +523,7 @@ network. The following fields are passed to the transaction.
 Only the SWAN Operators can create SWIDs. See the method
 [CreateSWID](#_CreateSWID) to generate new SWIDs.
 
-All the values for `email`, `pref`, `salt` and `tcString` must the turned into 
+All the values for `email`, `pref`, `salt` and `tcString` must the turned into
 OWIDs before passing them in the update request.
 
 #### Input
@@ -526,6 +533,8 @@ OWIDs before passing them in the update request.
 | email                                                                                                                                           | OWID                                                                        | The raw email address contained in the payload of an OWID generated by the UIP.               |
 | pref                                                                                                                                            | OWID                                                                        | The preference string contained in the payload of an OWID generated by the UIP.               |
 | swid                                                                                                                                            | OWID                                                                        | The SWID as an OWID generated by the SWAN Operator that created it via a call to create SWID. |
+| salt                                                                                                                                            | OWID                                                                        | The salt as a base 64 string contained in the payload of an OWID generated by the UIP.        |
+| tcString                                                                                                                                        | OWID                                                                        | The TCF string contained in the payload of an OWID generated by the UIP.                      |
 | accessNode backgroundColor displayUserInterface message messageColor postMessageOnComplete javaScript useHomeNode progressColor returnUrl title | The same meaning as those provided as input to the [fetch](#_Fetch) action. |                                                                                               |
 
 #### Validation
@@ -578,9 +587,9 @@ conditions.
 The following request will return a URL that should be used as described in the
 [fetch](#fetch) example.
 
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 https://swan-operator.com/swan/api/v1/stop?accessKey=123\&host=domain-to-stop.com 
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ### CreateSWID
 
@@ -596,9 +605,9 @@ following conditions.
 
 #### Example
 
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 https://swan-operator.com/swan/api/v1/create-swid?accessKey=123
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ### Home Node
 
@@ -615,6 +624,6 @@ following conditions.
 
 #### Example
 
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 https://swan-operator.com/swan/api/v1/home-node?accessKey=123
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
