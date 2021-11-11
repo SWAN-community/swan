@@ -183,6 +183,22 @@ SWAN in a different capacity. To do so they will need to enter into a separate
 contract incorporating the Model Terms which will govern that relationship with
 parties within the SWAN Ecosystem.
 
+User Inferface Providers must accept changes to consent preferences from Authorized
+Agents, unless a User Interface Provider has a good-faith, reasonable, and documented
+belief that any communication fron an Authorized Agent is fraudulent. In the event
+that a User Interface Provider does not accept a change to consent preferences received
+from an Authorized Agent, the User Interface Provider must respond to the Authorized
+Agent with an explanation why it believes the request is fraudulent.
+
+&nbsp;&nbsp;&nbsp;&nbsp;c.  <u>Authorized Agents</u>
+
+"Authorized Agents" are services that act on behalf of users to manage consent 
+preferences. An Authorized Agent holds a power of attorney or written permission from
+each of its users.
+
+An Authorized Agent communicates consent preferences to User Interface Providers, and
+communicates the results to its users.
+
 **5.  Users**
 
 SWAN adopts a privacy-centric design that puts the needs of Website visitors
